@@ -1,0 +1,32 @@
+[project]
+name = "spar-wiki"
+version = "0.0.1"
+description = "Efficient sparse indexing pipeline & retrieval API over Wikipedia abstracts."
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Soumyadeep Kundu", email = "sdk2k01@gmail.com" }]
+dependencies = [
+    "dspy",
+    "sentence-transformers==5.2.0",
+    "polars",
+    "pyarrow",
+    "fastapi",
+    "uvicorn[standard]",
+    "fastapi-cli",
+    "pydantic",
+    "pydantic-settings",
+    "sqlalchemy",
+]
+
+[tool.uv]
+python-preference = "only-managed"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[dependency-groups]
+dev = ["ruff", "ipdb", "parquet-tools", "pre-commit"]
